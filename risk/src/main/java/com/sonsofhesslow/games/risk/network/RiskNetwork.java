@@ -156,9 +156,7 @@ public class RiskNetwork implements GooglePlayNetworkCompatible {
     //connected to the room, (not playing yet)
     public void onConnectedToRoom(Room room) {
         Log.d(TAG, "onConnectedToRoom.");
-        //get participants and my ID:
-        //mParticipants = room.getParticipants();
-        mMyId = room.getParticipantId(Games.Players.getCurrentPlayerId(mGoogleApiClient));
+
         // save room ID if its not initialized in onRoomCreated() so player can leave cleanly before the game starts.
         if(mRoomId==null) {
             mRoomId = room.getRoomId();
@@ -171,6 +169,11 @@ public class RiskNetwork implements GooglePlayNetworkCompatible {
     }
     
     public void leaveRoom() {
+        System.out.println("leaving room");
+        for(Participant participant : mParticipants) {
+            participant = null;
+        }
+
         if(mRoomId != null) {
             Games.RealTimeMultiplayer.leave(mGoogleApiClient, googlePlayNetwork, mRoomId);
         }
@@ -196,9 +199,6 @@ public class RiskNetwork implements GooglePlayNetworkCompatible {
 
     // room has been created
     public void onRoomCreated(int statusCode, Room room) {
-        /*if(mParticipants == null) {
-            mParticipants = room.getParticipants();
-        }*/
 
         Log.d(TAG, "onRoomCreated(" + statusCode + ", " + room + ")");
         if (statusCode != GamesStatusCodes.STATUS_OK) {
@@ -218,7 +218,15 @@ public class RiskNetwork implements GooglePlayNetworkCompatible {
     @Override
     public void onRoomConnected(int statusCode, Room room) {
         Log.d(TAG, "onRoomConnected(" + statusCode + ", " + room + ")");
+        System.out.println("on room connected");
+
+        mMyId = room.getParticipantId(Games.Players.getCurrentPlayerId(mGoogleApiClient));
+        mParticipants = null;
         this.mParticipants = room.getParticipants();
+
+        for(Participant p : mParticipants) {
+            System.out.println("participant: " + p);
+        }
 
         uiUpdate.startGame();
         if (statusCode != GamesStatusCodes.STATUS_OK) {
@@ -269,6 +277,8 @@ public class RiskNetwork implements GooglePlayNetworkCompatible {
 
     @Override
     public void onPeerLeft(Room room, List<String> peersWhoLeft) {
+        System.out.println("peerleft");
+        leaveRoom();
         updateRoom(room);
     }
 
@@ -289,12 +299,14 @@ public class RiskNetwork implements GooglePlayNetworkCompatible {
 
     @Override
     public void onPeersDisconnected(Room room, List<String> peers) {
+        System.out.println("peer disconnected");
+        leaveRoom();
         updateRoom(room);
     }
 
     void updateRoom(Room room) {
         if (room != null) {
-            mParticipants = room.getParticipants();
+            //mParticipants = room.getParticipants();
         }
         if (mParticipants != null) {
             // TODO: 2016-05-13 update variables from participants

@@ -173,9 +173,6 @@ public class MainActivity extends AppCompatActivity
                 if (responseCode == Activity.RESULT_OK) {
                     // ready to start playing
                     Log.d(TAG, "Starting game (waiting room returned OK).");
-
-                    // TODO: 2016-05-13 implement start game
-                    //startGame(true, new int[2]);
                 } else if (responseCode == riskNetworkManager.RESULT_LEFT_ROOM) {
                     // player indicated that they want to leave the room
                     leaveRoom();
@@ -286,6 +283,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void startGame(boolean isOnline, int[] ids) {
+        //this.riskNetworkManager = new RiskNetworkManager(this, this);
 
         if (graphicsView.getParent() != null) {
             setContentView(R.layout.activity_main);
@@ -293,7 +291,6 @@ public class MainActivity extends AppCompatActivity
             overlayController = new Overlay(this);
             graphicsView = new RiskGLSurfaceView(this, getResources());
             graphicsView.addListener(this);
-
         }
 
         //keeps screen turned on until game is finnished
@@ -426,11 +423,14 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void initOnlineGame(int[] ids) {
+        System.out.println("init online game");
+
         this.controller = new Controller(ids, overlayController, getResources());
         controller.setSelfId(riskNetworkManager.getRiskNetwork().getmMyId().hashCode());
         //add to observables
         Risk riskModel = controller.getRiskModel();
         riskModel.addObserver(riskNetworkManager);
+
         for (Territory territory : riskModel.getTerritories()) {
             territory.addObserver(riskNetworkManager);
         }
@@ -472,9 +472,11 @@ public class MainActivity extends AppCompatActivity
     public void displayInvitation(String caller) {
         showInvPopup = true;
         //invitation to play a game, store it in mIncomingInvitationId and show popup on screen
-        ((TextView) findViewById(R.id.incoming_invitation_text)).setText(
-                caller + " " +
-                        getString(R.string.is_inviting_you));
+        if(findViewById(R.id.incoming_invitation_text) != null) {
+            ((TextView) findViewById(R.id.incoming_invitation_text)).setText(
+                    caller + " " +
+                            getString(R.string.is_inviting_you));
+        }
         switchToScreen(getmCurScreen()); // This will show the invitation popup
 
     }

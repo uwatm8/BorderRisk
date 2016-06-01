@@ -219,13 +219,13 @@ public class Overlay {
         setInformation("", false);
     }
 
-    public void populateListView(Map<Player, float[]> playerColors) {
+    public void populateListView(Map<Player, float[]> playerColors, Player[] players) {
         //Elements
         ArrayList<float[]> colour = new ArrayList<float[]>();
         ArrayList<String> names = new ArrayList<String>();
         ArrayList<String> armyCount = new ArrayList<String>();
         ArrayList<Uri> images = new ArrayList<Uri>();
-        for (Player player : playerColors.keySet()) {
+        for (Player player : players) {
             names.add(player.getName());
             armyCount.add("Territory count: " + player.getTerritoriesOwned());
             images.add(player.getImageRefrence());

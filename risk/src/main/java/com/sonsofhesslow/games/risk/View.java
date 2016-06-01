@@ -25,7 +25,7 @@ public class View implements Observer {
     final float[] blue = {0, 0, 1, 1};
 
 
-    private final Risk risk;
+    private Risk risk;
     Map<Player, float[]> playerColors = new HashMap<>();
     Overlay overlayController;
 
@@ -53,7 +53,7 @@ public class View implements Observer {
         } else if (obs instanceof Risk) {
             Risk risk = (Risk) obs;
             if (overlayController.getOverlay().getChildCount() > 1) {
-                overlayController.populateListView(playerColors);
+                overlayController.populateListView(playerColors, risk.getPlayers());
             }
             if (arg instanceof Risk.RiskChangeEvent) {
                 /*

@@ -25,12 +25,14 @@ public class GooglePlayNetwork implements RealTimeMessageReceivedListener , Goog
     private GooglePlayNetworkCompatible networkTarget;
 
     public void onRealTimeMessageReceived(RealTimeMessage rtm){
+        System.out.println("message recieved");
         if(networkTarget != null) {
             networkTarget.onRealTimeMessageReceived(rtm);
         }
     }
 
     public void broadcast(byte[] messageBuffer, GoogleApiClient mGoogleApiClient, ArrayList<Participant> participants, String roomId) {
+        System.out.println("broadcasting");
         // Send to every other participant.
         for (Participant participant : participants) {
             //should send message
@@ -38,8 +40,8 @@ public class GooglePlayNetwork implements RealTimeMessageReceivedListener , Goog
         }
     }
 
-    public void setNetworkTarget(GooglePlayNetworkCompatible networkAdapter) {
-        this.networkTarget = networkAdapter;
+    public void setNetworkTarget(GooglePlayNetworkCompatible networkTarget) {
+        this.networkTarget = networkTarget;
     }
 
     @Override

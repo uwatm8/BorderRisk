@@ -44,7 +44,7 @@ android {
         minSdkVersion android_min_sdk_version
         targetSdkVersion android_compile_version
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.1"
     }
 }
 

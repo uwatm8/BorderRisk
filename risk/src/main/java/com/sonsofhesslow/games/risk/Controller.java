@@ -59,7 +59,7 @@ public class Controller implements GLTouchListener, NetworkListener {
 
         riskView = new View(riskModel, overlayController, resources);
 
-        //add observers
+        //add observers for view
         riskModel.addObserver(riskView);
         for (Territory territory : riskModel.getTerritories()) {
             territory.addObserver(riskView);
@@ -92,6 +92,7 @@ public class Controller implements GLTouchListener, NetworkListener {
 
     @Override
     public void handleNetworkChange(NetworkChangeEvent event) {
+        System.out.println("network change");
         refreshGamePhase();
 
         switch (event.action) {
@@ -136,8 +137,15 @@ public class Controller implements GLTouchListener, NetworkListener {
                         if (touchedTerritory.getOccupier() == null) {
                             touchedTerritory.setOccupier(riskModel.getCurrentPlayer());
 
+
+                            final int EXTRA_TRIES;
                             //for debugging only (picks more territories at once)
-                            final int EXTRA_TRIES = 0;
+                            if(isOnline()) {
+                                EXTRA_TRIES = 0;
+                            } else {
+                                //for presentation
+                                EXTRA_TRIES = 21;
+                            }
 
                             Random r = new Random();
                             for (int i = 0; i < EXTRA_TRIES; i++) {

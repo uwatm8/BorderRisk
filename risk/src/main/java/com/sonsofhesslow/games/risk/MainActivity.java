@@ -138,6 +138,7 @@ public class MainActivity extends AppCompatActivity
                 startActivityForResult(intent, RC_INVITATION_INBOX);
                 break;
             case R.id.button_accept_popup_invitation:
+                removeInvitation();
                 // user wants to accept the invitation shown on the invitation popup (from OnInvitationReceivedListener).
                 riskNetworkManager.acceptInviteToRoom();
                 break;
@@ -284,6 +285,7 @@ public class MainActivity extends AppCompatActivity
 
     public void startGame(boolean isOnline, int[] ids) {
         //this.riskNetworkManager = new RiskNetworkManager(this, this);
+        resources = getResources();
 
         if (graphicsView.getParent() != null) {
             setContentView(R.layout.activity_main);
@@ -362,13 +364,17 @@ public class MainActivity extends AppCompatActivity
 
     void switchToMainScreen() {
         if (riskNetworkManager != null && riskNetworkManager.isConnected()) {
+            removeInvitation();
             for (int id : CLICKABLES) {
                 findViewById(id).setOnClickListener(this);
             }
+
             switchToScreen(R.id.screen_main);
         } else {
             switchToScreen(R.id.screen_sign_in);
         }
+
+
     }
 
     //GAME BUTTONS SECTION - handle buttonevents from the buttons in game (not menu)

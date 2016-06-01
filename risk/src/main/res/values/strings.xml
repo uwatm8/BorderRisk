@@ -2,7 +2,7 @@
     <string name="app_name">Border Risk</string>
     <string name="single_player">play with others on this device</string>
 
-    <string name="game_title">Risk</string>
+    <string name="game_title">Border Risk</string>
     <string name="game_blurb">To play online, you must sign in with Google. \n\n If you connect you can play with your friends, or random people across the world!</string>
     <string name="single_player_explanation">Play offline with friends.</string>
     <string name="quick_game">Quick game</string>
@@ -17,7 +17,6 @@
     <string name="please_wait">Please wait&#8230;</string>
     <string name="instructions">Click the button as fast as you can!</string>
     <string name="game_problem">An error occurred while starting the game. Please try again.</string>
-    <string name="click_me">Click me!</string>
     <string name="is_inviting_you">is challenging you to a game!</string>
     <string name="signin_other_error">There was an issue with sign in. Please try again later.</string>
     <string name="please_wait_text">Please wait for you turn</string>

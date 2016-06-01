@@ -72,10 +72,6 @@ public class RiskNetwork implements GooglePlayNetworkCompatible {
 
     private boolean selfModified = false;
 
-    void acceptInviteToRoom() {
-        acceptInviteToRoom(mIncomingInvitationId);
-    }
-
     // Accept the given invitation.
     void acceptInviteToRoom(String invId) {
         Log.d(TAG, "Accepting invitation: " + mIncomingInvitationId);
@@ -170,12 +166,10 @@ public class RiskNetwork implements GooglePlayNetworkCompatible {
     
     public void leaveRoom() {
         System.out.println("leaving room");
-        for(Participant participant : mParticipants) {
-            participant = null;
-        }
 
         if(mRoomId != null) {
             Games.RealTimeMultiplayer.leave(mGoogleApiClient, googlePlayNetwork, mRoomId);
+            mRoomId = null;
         }
     }
 

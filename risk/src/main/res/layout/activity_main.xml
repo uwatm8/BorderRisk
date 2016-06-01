@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- multiple parts of file taken from goodle's example project - https://github.com/playgameservices/android-basic-samples-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.sonsofhesslow.games.risk.MainActivity">
+
+    <!-- SIGN-IN SCREEN -->
+    <LinearLayout android:id="@+id/screen_sign_in" style="@style/LLScreen">
+        <TextView style="@style/GameTitle" />
+        <TextView style="@style/GameBlurb" />
+
+        <Button style="@style/MainScreenButton"
+            android:text="@string/single_player"
+            android:id="@+id/button_single_player"
+            android:enabled="true" />
+
+        <com.google.android.gms.common.SignInButton android:id="@+id/button_sign_in"
+            style="@style/SignInButton" />
+    </LinearLayout>
+
+    <!-- MAIN SCREEN -->
+    <LinearLayout android:id="@+id/screen_main" style="@style/LLScreen">
+        <TextView style="@style/GameTitle" />
+        <Button android:id="@+id/button_single_player_2"
+            style="@style/MainScreenButton"
+            android:text="@string/single_player" />
+        <TextView style="@style/MainScreenButtonBlurb"
+            android:text="@string/single_player_explanation" />
+        <Button android:id="@+id/button_quick_game"
+            style="@style/MainScreenButton"
+            android:text="@string/quick_game" />
+        <TextView style="@style/MainScreenButtonBlurb"
+            android:text="@string/quick_game_explanation" />
+        <Button android:id="@+id/button_invite_players"
+            style="@style/MainScreenButton"
+            android:text="@string/invite_players" />
+        <TextView style="@style/MainScreenButtonBlurb"
+            android:text="@string/invite_players_explanation" />
+        <Button android:id="@+id/button_see_invitations"
+            style="@style/MainScreenButton"
+            android:text="@string/see_invitations" />
+        <TextView style="@style/MainScreenButtonBlurb"
+            android:text="@string/see_invitations_explanation" />
+        <Button android:id="@+id/button_sign_out"
+            style="@style/SignOutButton"
+            android:text="@string/sign_out" />
+    </LinearLayout>
+
+    <!-- INVITATION POPUP -->
+    <LinearLayout android:id="@+id/invitation_popup" style="@style/InvPopup">
+        <TextView android:id="@+id/incoming_invitation_text" style="@style/InvPopupText" />
+        <Button android:id="@+id/button_accept_popup_invitation"
+            style="@style/InvPopupButton"
+            android:text="@string/accept_popup_invite" />
+    </LinearLayout>
+
+    <!-- "PLEASE WAIT" SCREEN -->
+    <LinearLayout android:id="@+id/screen_wait" style="@style/LLScreen">
+        <TextView style="@style/Blurb" android:text="@string/please_wait" />
+    </LinearLayout>
+
+    <!-- GAMEPLAY SCREEN -->
+    <LinearLayout android:id="@+id/screen_game" style="@style/LLScreen">
+        <!-- placeholder, should maybe remove?-->
+    </LinearLayout>
+</FrameLayout>

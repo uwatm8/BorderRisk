@@ -1,0 +1,67 @@
+Date: 2016-05-11
+
+
+
+
+  	Facilitator: Arvid Hast
+
+  	Participants: Arvid Hast, Niklas Jonsson, Daniel Hesslow
+
+
+
+
+1. Objectives
+
+	Network integration
+
+	Landscape / Portrait mode
+
+	UI controlls
+
+
+
+
+2. Reports (15 min) from previous meeting
+
+	All members started with their respective  tasks
+
+		Daniel: Fixed numbers and shaders, how shaders work
+
+		Niklas: Model and controller, game rules
+
+		Arvid: Network connection between phones is working, working on integration
+
+		Fredrik: UI controlls
+
+
+
+
+3. Discussion items (35 min) 
+
+	Network
+
+	Improvements of the UI
+
+	How to solve landscape/portrait mode
+
+
+
+
+4. Outcomes and assignments (5 min)	
+
+ 	General work responsibilities:
+
+  		Niklas, Portrait, landscape
+
+  		Fredrik, Continue working on UI
+
+		Arvid, Integration of network
+
+  		Daniel, Helping with integration of network
+
+
+
+
+5. Wrap up
+
+  	Next meeting: 2016-5-13, 13.15

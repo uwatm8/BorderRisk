@@ -1,0 +1,54 @@
+Date: 2016-05-26
+
+
+  	Facilitator: Daniel Hesslow
+
+  	Participants: Arvid Hast, Niklas Jonsson, Daniel Hesslow, Fredrik Lindevall
+
+
+
+
+1. Objectives
+	
+	Win screen
+	Documentation
+	Bug fixes
+
+ 
+2. Reports (15 min) from previous meeting
+
+		Daniel: Fixed dependencies
+
+		Niklas: Documentation
+
+		Arvid: Fixes crashes, dependencies
+
+		Fredrik: Card view
+
+
+3. Discussion items (35 min) 
+
+	Strange crashes
+
+	Documentation
+
+	Dependencies, bugs
+
+
+
+4. Outcomes and assignments (5 min)	
+
+ 	General work responsibilities:
+
+  		Niklas, Complete documentation
+
+  		Fredrik, Complete card view, UI fixes, documentation
+
+		Arvid, Bug fixes, documentation
+
+  		Daniel, Help with documentation, improve structure
+
+
+5. Wrap up
+
+  	Last meeting!

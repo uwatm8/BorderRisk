@@ -1,0 +1,36 @@
+Date: 2016-04-26
+
+  	Facilitator: Fredrik Lindevall
+
+  	Participants: Arvid Hast, Niklas Jonsson, Daniel Hesslow, Fredrik Lindevall
+
+1. Objectives
+	Low framerate
+	Game occasionally crashes
+	Nullpointer problems with neighbour logic
+
+
+2. Reports (15 min) from previous meeting
+	All members started with their respective  tasks
+		Daniel: Improved map, implemented new map into game
+		Niklas: Game logic done
+		Arvid: Test cases
+		Fredrik: Made a better map
+
+
+3. Discussion items (35 min) 
+	Testing cases
+	Exception when setting neighbours on territories
+	slow loading map, improvements
+	Network
+
+
+4. Outcomes and assignments (5 min)	
+ 	General work responsibilities:
+  		Niklas, make start screen, application layout
+  		Fredrik, make game view
+		Arvid, network communication, testing
+  		Daniel, make loading faster, efficiency
+
+5. Wrap up
+  	Next meeting: 2016-4-29, 14:30

@@ -1,0 +1,37 @@
+Date: 2016-4-14, 10:45
+
+  	Facilitator: Arvid Hast
+
+  	Participants: Arvid Hast, Niklas Jonsson, Daniel Hesslow, Fredrik Lindevall
+
+1. Objectives 
+	Overlay not working.
+	Problem with task delegation has been causing issues.
+
+2. Reports (15 min) from previous meeting
+	com.sonsofhesslow.games.risk.Graphics is now working for everyone.
+	The vektormap is almost finished and a work on a map overlay has started.
+	The basic class structure and functinality is now working.
+	com.sonsofhesslow.games.risk.Graphics now calculate country neighbours.
+	All members started with new tasks
+		Daniel: is making the graphics structure better and more logical.
+		Niklas:	is making and testing the basic game logic
+		Arvid: is working on attack mechanics 
+		Fredrik: is working on game overlay
+
+3. Discussion items (35 min) 
+	We have disscused if it's allowed to have a uploaded branch so we can work on diffrent computers
+	Overlay
+	com.sonsofhesslow.games.risk.Graphics implementation
+	Game logics
+
+4. Outcomes and assignments (5 min)	
+	It's allowed to have online branches 
+ 	General work responsibilities:
+  		Niklas, basic game logic and testing
+  		Fredrik, overlay graphics and basic UI
+		Arvid, attack mechanics and logic
+  		Daniel, UI and openGL graphics (Country outlines and arrows)
+
+5. Wrap up
+  	Next meeting: 2016-4-18, 09:00

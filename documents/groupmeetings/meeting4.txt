@@ -1,0 +1,28 @@
+Date: 2016-4-18, 13:10
+
+  	Facilitator: Fredrik Lindevall
+  	Participants: Arvid Hast, Niklas Jonsson, Daniel Hesslow, Fredrik Lindevall
+
+Note: The meeting was delayed to the afternoon.
+
+1. Objectives
+	Need to map to be the actual map that is going to be used. Not a mockup.
+
+2. Reports (15 min) from previous meeting
+	Fredrik: Game overlay is working.
+	Arvid: Fixed attack mechanics but have not yet been able to test it. 
+	Niklas:	Has created the basic game logic but has not yet begun to test it. 
+	Daniel: Has not yet made the graphics structure better or more logical.
+
+3. Discussion items (35 min) 
+	How the graphics is suppoed to be integrated to the model.
+	How the cliend and server is supposed to comunicate and through what medium.
+
+4. Outcomes and assignments (5 min)	
+	Niklas continues with the basic game logic testing.
+	Fredrik, overlay graphics and basic UI
+	Arvid, looks at the server client interaction.
+	Daniel, works on graphics integration, extention and structure. 
+
+5. Wrap up
+  	Next meeting: 2016-4-18, 09:00

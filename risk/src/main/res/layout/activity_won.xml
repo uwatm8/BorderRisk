@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="90dp"
+    android:gravity="center_horizontal"
+    android:layout_gravity="center"
+    android:baselineAligned="false"
+    android:layout_centerVertical="true"
+
+    android:clickable="false"
+    android:id="@+id/wonActivity">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="90dp"
+        android:background="#999999">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/playerWonText"
+            android:id="@+id/player_won_text"
+
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="main screen"
+            android:id="@+id/button2"
+            android:layout_below="@+id/player_won_text"
+            android:layout_centerHorizontal="true"
+            android:onClick="backToMainscreenPressed" />
+
+    </RelativeLayout>
+
+</LinearLayout>

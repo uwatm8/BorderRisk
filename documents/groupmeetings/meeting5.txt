@@ -1,0 +1,63 @@
+Date: 2016-4-21, 11:00
+
+
+
+
+  	Facilitator: Arvid Hast
+
+  	Participants: Arvid Hast, Niklas Jonsson, Daniel Hesslow, Fredrik Lindevall
+
+
+
+
+Note: The meeting was delayed to the afternoon.
+
+
+
+
+1. Objectives
+
+	No use cases tested.
+
+
+
+
+2. Reports (15 min) from previous meeting
+
+	Fredrik: Zoom is working.
+
+	Arvid: Network progress. 
+
+	Niklas: Game logic progress.
+
+	Daniel: com.sonsofhesslow.games.risk.Graphics progress.
+
+
+
+
+3. Discussion items (35 min) 
+
+	Package structure
+     View class
+
+     Controller/Model
+
+
+
+
+4. Outcomes and assignments (5 min)	
+
+	Niklas: Break up Risk class, more game logic
+
+	Fredrik: Improve zoom, view class
+
+	Arvid: Create tests, continue with network
+
+	Daniel: More graphics, read bigger maps
+
+
+
+
+5. Wrap up
+
+  	Next meeting: 2016-4-25, 16:00

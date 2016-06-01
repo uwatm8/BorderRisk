@@ -1,0 +1,33 @@
+Date: 2016-04-11
+
+  	Facilitator: Niklas Jonsson
+
+  	Participants: Arvid Hast, Niklas Jonsson, Daniel Hesslow, Fredrik Lindevall
+
+1. Objectives 
+  	Vector graphics not working for all developers, investigate
+	Everyone not up to date with vector graphic code
+	Delegate general project responsibilities and work tasks
+	
+
+2. Reports (15 min) from previous meeting
+	All members started with their respective  tasks
+		Daniel: started and made good progress with vector graphics
+		Niklas: github structure
+		Arvid: general program structure and ideas for development
+		Fredrik: general program structure and ideas for development
+
+3. Discussion items (35 min) 
+	Menus - Android
+	Posible 3d graphic ideas, objects and implementation
+ 	Delegation of tasks, see outcome
+
+4. Outcomes and assignments (5 min)	
+ 	General work responsibilities:
+  		Niklas, menu system, general android tasks
+  		Fredrik, world map and other graphics
+		Arvid, player logic
+  		Daniel, continue with vector graphic
+
+5. Wrap up
+  	Next meeting: 2016-4-14, 14:30

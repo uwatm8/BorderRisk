@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="140dp"
+    android:layout_height="170dp"
+    android:clickable="true">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="120dp"
+        android:layout_height="150dp"
+        android:background="#cbbba0"
+        android:clickable="true"
+        android:layout_margin="10dp"
+        android:id="@+id/frameColour">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="140dp"
+            android:layout_centerInParent="true"
+            android:background="#dadada"
+            android:id="@+id/cardMain">
+
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="150dp"
+                android:id="@+id/cardImage"
+                android:layout_alignParentTop="false"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentStart="false"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/card_image" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/cardText"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

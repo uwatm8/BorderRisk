@@ -1,0 +1,63 @@
+Date: 2016-05-12
+
+
+
+
+  	Facilitator: Niklas Jonsson
+
+  	Participants: Arvid Hast, Niklas Jonsson, Daniel Hesslow, Fredrik Lindevall
+
+
+
+
+1. Objectives
+
+	Cleanup code
+	Overlay design
+	Screen rotation
+
+ 
+2. Reports (15 min) from previous meeting
+
+	All members started with their respective  tasks
+
+		Daniel: Fixes to graphics
+
+		Niklas: Screen rotation progress
+
+		Arvid: Network progress
+
+		Fredrik: UI controls progress
+
+
+
+
+3. Discussion items (35 min) 
+
+	Network
+
+	Improvements of the UI
+
+	How to solve landscape/portrait mode
+	
+	Ideas for further development
+
+
+4. Outcomes and assignments (5 min)	
+
+ 	General work responsibilities:
+
+  		Niklas, Portrait, landscape
+
+  		Fredrik, Continue working on UI
+
+		Arvid, Integration of network
+
+  		Daniel, Helping with integration of network
+
+
+
+
+5. Wrap up
+
+  	Next meeting: 2016-5-16, 13.15

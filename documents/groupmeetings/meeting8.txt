@@ -1,0 +1,31 @@
+Date: 2016-05-02
+
+  	Facilitator: Daniel Hesslow
+  	Participants: Arvid Hast, Niklas Jonsson, Daniel Hesslow, Fredrik Lindevall
+
+1. Objectives
+	Better Numbers
+	UI-Controller
+	Game mechanics
+
+2. Reports (15 min) from previous meeting
+	All members started with their respective  tasks
+		Daniel: Real numbers
+		Niklas: Logics
+		Arvid: Working on getting networking to work in a seperate app.
+		Fredrik: Implemented UI controller
+
+3. Discussion items (35 min) 
+	Network
+	Improvements of the UI
+	Clean up the code
+
+4. Outcomes and assignments (5 min)	
+ 	General work responsibilities:
+  		Niklas, Continue working on the model
+  		Fredrik, Continue working on UI
+		Arvid, Networking
+  		Daniel, shaders
+
+5. Wrap up
+  	Next meeting: 2016-5-2, 13.15

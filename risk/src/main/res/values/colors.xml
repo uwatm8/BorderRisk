@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3f51b5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="AccentColor">#cc0000</color>
+    <color name="PopupColor">@color/AccentColor</color>
+    <color name="PopupTextColor">#ffffff</color>
+    <color name="ButtonTextColor">#ffffff</color>
+    <color name="BlurbColor">#a0a0a0</color>
+    <color name="SignOutButtonBackground">#e0e0e0</color>
+    <color name="SignOutButtonTextColor">#404040</color>
+
+    <color name="MainScreenButtonBackground">#e0e0e0</color>
+    <color name="MainScreenTextColor">#555555</color>
+
+    <!--Colors for overlay-->
+    <color name="overlayMovementColor">#ff0099cc</color>
+    <color name="overlayPlaceArmiesGreen">#66CDAA</color>
+    <color name="overlayPickTerritoriesColor">#F0E68C</color>
+    <color name="overlayFightColor">#B22222</color>
+</resources>

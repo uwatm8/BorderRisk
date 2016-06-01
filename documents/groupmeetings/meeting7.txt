@@ -1,0 +1,37 @@
+Date: 2016-04-28
+
+  	Facilitator: Niklas Jonsson
+
+  	Participants: Arvid Hast, Niklas Jonsson, Daniel Hesslow, Fredrik Lindevall
+
+1. Objectives
+	Long startup time
+	We need full test coverage
+
+2. Reports (15 min) from previous meeting
+	All members started with their respective  tasks
+		Daniel: Fixed view
+		Niklas: Fixed logic problems
+		Arvid: Been reading up on network
+		Fredrik: Worked on UI
+
+
+3. Discussion items (35 min) 
+	Network
+	Test cases
+	UI and battle screen (battle sequence)
+	Fix buttons
+	Fix card view
+	Clean up the code
+	The colours on the map
+
+
+4. Outcomes and assignments (5 min)	
+ 	General work responsibilities:
+  		Niklas, fix the model
+  		Fredrik, create test cases and test the model, create card view, create attack button
+		Arvid, network communication
+  		Daniel, fix the model and work with the graphic, network
+
+5. Wrap up
+  	Next meeting: 2016-5-2, 13.15

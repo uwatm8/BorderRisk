@@ -1,0 +1,62 @@
+Date: 2016-05-16
+
+
+
+
+  	Facilitator: Daniel Hesllow
+
+  	Participants: Arvid Hast, Niklas Jonsson, Daniel Hesslow, Fredrik Lindevall
+
+
+
+
+1. Objectives
+
+	Cleanup code
+	Overlay design
+	Screen rotation
+
+ 
+2. Reports (15 min) from previous meeting
+
+	All members started with their respective  tasks
+
+		Daniel: First Network functionality in gameplay working, choose territoy phase working online
+
+		Niklas: Screen rotation progress
+
+		Arvid: First Network functionality in gameplay working, choose territoy phase working online
+
+		Fredrik: UI improvements
+
+
+
+3. Discussion items (35 min) 
+
+	Network
+
+	Improvements of the UI
+
+	How to solve landscape/portrait mode
+	
+	Ideas for further development
+
+
+4. Outcomes and assignments (5 min)	
+
+ 	General work responsibilities:
+
+  		Niklas, Continue with Portrait, landscape mode, cleanup code
+
+  		Fredrik, Continue working on UI
+
+		Arvid, Integration of network, continue with integration of next gamephase
+
+  		Daniel, Helping with integration of network, cleanup graphics code
+
+
+
+
+5. Wrap up
+
+  	Next meeting: 2016-5-19, 11.00

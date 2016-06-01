@@ -144,7 +144,7 @@ public class Controller implements GLTouchListener, NetworkListener {
                                 EXTRA_TRIES = 0;
                             } else {
                                 //for presentation
-                                EXTRA_TRIES = 20;
+                                EXTRA_TRIES = 0;
                             }
 
                             Random r = new Random();

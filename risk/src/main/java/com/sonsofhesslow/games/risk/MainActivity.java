@@ -462,6 +462,14 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    public void chatButtonPressed(View v) {
+        overlayController.toggleChatVisible();
+    }
+
+    public void sendButtonPressed(View v) {
+        overlayController.sendMessage();
+    }
+
     public void hideList(View v) {
         overlayController.setListVisible(false);
     }

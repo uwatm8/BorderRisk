@@ -38,5 +38,7 @@
     <string name="armies_to_place">Armies to place:</string>
     <string name="player_image">player Image</string>
     <string name="waiting_for_player">Waiting for player</string>
+    <string name="chatButtonText">Chat</string>
+    <string name="chatHint">Message</string>
 
 </resources>

@@ -50,6 +50,19 @@
         android:onClick="showList" />
 
     <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/chatButtonText"
+        android:id="@+id/chat"
+        android:layout_alignBottom="@+id/showList"
+        android:layout_toLeftOf="@+id/showList"
+        android:layout_toStartOf="@+id/showList"
+        android:layout_marginRight="40dp"
+        android:layout_marginEnd="40dp"
+        android:onClick="chatButtonPressed"
+        android:visibility="visible" />
+
+    <Button
         android:layout_width="105dp"
         android:layout_height="wrap_content"
         android:text="@string/nextTurnButtonText"
@@ -82,6 +95,46 @@
             android:layout_width="280dp"
             android:layout_height="300dp"
             android:id="@+id/listFrame">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/chatFrame"
+                android:visibility="gone">
+
+                <ListView
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:id="@+id/chatView"
+
+                    android:smoothScrollbar="false"
+                    android:scrollingCache="false"
+                    android:footerDividersEnabled="false"
+                    android:focusableInTouchMode="false"
+                    android:focusable="false"
+                    android:background="#929292"
+                    android:visibility="visible"
+
+                    android:stackFromBottom="true"
+                    android:transcriptMode="alwaysScroll"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/sendButton"
+                    android:text="Send"
+                    android:layout_alignParentBottom="true"
+                    android:onClick="sendButtonPressed"/>
+
+            </RelativeLayout>
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:id="@+id/textView"
+                android:layout_marginBottom="0dp"
+                android:visibility="gone"
+                android:hint="@string/chatHint" />
 
             <ListView
                 android:layout_width="fill_parent"

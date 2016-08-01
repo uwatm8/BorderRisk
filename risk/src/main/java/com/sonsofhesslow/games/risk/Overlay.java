@@ -8,6 +8,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.GridLayout;
 import android.widget.GridView;
@@ -38,6 +39,12 @@ public class Overlay {
     CardGridAdapter gridAdapter;
     GridView gridView;
 
+    //for chat
+    ArrayList<String> chatMessages = new ArrayList<>();
+    ArrayAdapter<String> chatAdapter;
+    TextView chatTextField;
+    String message;
+
     Overlay(Context context) {
         // TODO: 2016-05-26 r.id color instead? (better to take from res)  getResources().getColor(R.color.<id>);
         movementBlue = Color.parseColor("#ff0099cc");
@@ -50,6 +57,9 @@ public class Overlay {
         this.context = context;
         this.factory = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         listPopulated = false;
+
+        //for chat
+        chatAdapter = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, chatMessages);
     }
 
     public void addView(int value) {
@@ -137,12 +147,36 @@ public class Overlay {
             parent.findViewById(R.id.listView).setVisibility(View.VISIBLE);
             parent.findViewById(R.id.showList).setVisibility(View.GONE);
             parent.findViewById(R.id.hideList).setVisibility(View.VISIBLE);
+            parent.findViewById(R.id.chat).setVisibility(View.GONE);
         } else {
             parent.findViewById(R.id.listView).setVisibility(View.GONE);
             parent.findViewById(R.id.showList).setVisibility(View.VISIBLE);
             parent.findViewById(R.id.hideList).setVisibility(View.GONE);
+            parent.findViewById(R.id.chat).setVisibility(View.VISIBLE);
         }
     }
+
+    public void toggleChatVisible() {
+        if (parent.findViewById(R.id.chatFrame).getVisibility() == View.GONE) {
+            parent.findViewById(R.id.chatFrame).setVisibility(View.VISIBLE);
+        } else {
+            parent.findViewById(R.id.chatFrame).setVisibility(View.GONE);
+        }
+    }
+
+    public void sendMessage() {
+        //TODO set message from textView
+        message = message + "1";
+
+        ListView listView = (ListView) parent.findViewById(R.id.chatView);
+        if(listView.getAdapter() == null) {
+            listView.setAdapter(chatAdapter);
+        }
+
+        chatMessages.add(message);
+        chatAdapter.notifyDataSetChanged();
+    }
+
     public void setWaitingVisible(boolean state) {
         if (state == true) {
             parent.findViewById(R.id.waitingForPlayer).setVisibility(View.VISIBLE);

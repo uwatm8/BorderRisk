@@ -39,12 +39,6 @@ public class Overlay {
     CardGridAdapter gridAdapter;
     GridView gridView;
 
-    //for chat
-    ArrayList<String> chatMessages = new ArrayList<>();
-    ArrayAdapter<String> chatAdapter;
-    TextView chatTextField;
-    String message;
-
     Overlay(Context context) {
         // TODO: 2016-05-26 r.id color instead? (better to take from res)  getResources().getColor(R.color.<id>);
         movementBlue = Color.parseColor("#ff0099cc");
@@ -57,9 +51,6 @@ public class Overlay {
         this.context = context;
         this.factory = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         listPopulated = false;
-
-        //for chat
-        chatAdapter = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, chatMessages);
     }
 
     public void addView(int value) {
@@ -162,19 +153,6 @@ public class Overlay {
         } else {
             parent.findViewById(R.id.chatFrame).setVisibility(View.GONE);
         }
-    }
-
-    public void sendMessage() {
-        //TODO set message from textView
-        message = message + "1";
-
-        ListView listView = (ListView) parent.findViewById(R.id.chatView);
-        if(listView.getAdapter() == null) {
-            listView.setAdapter(chatAdapter);
-        }
-
-        chatMessages.add(message);
-        chatAdapter.notifyDataSetChanged();
     }
 
     public void setWaitingVisible(boolean state) {

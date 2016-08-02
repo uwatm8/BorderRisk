@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity
     private Controller controller;
 
     private RiskNetworkManager riskNetworkManager = null;
+    private ChatController chatController;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -442,10 +443,14 @@ public class MainActivity extends AppCompatActivity
         }
 
         riskNetworkManager.getRiskNetwork().addListener(controller);
+
+        chatController = new ChatController(context, overlayController.parent, riskModel);
     }
 
     private void initOfflineGame(int[] ids) {
         this.controller = new Controller(ids, overlayController, getResources());
+
+        chatController = new ChatController(context, overlayController.parent, controller.getRiskModel());
     }
 
     private void resetGameVars() {
@@ -462,12 +467,13 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+
     public void chatButtonPressed(View v) {
         overlayController.toggleChatVisible();
     }
 
     public void sendButtonPressed(View v) {
-        overlayController.sendMessage();
+        chatController.sendMessage();
     }
 
     public void hideList(View v) {

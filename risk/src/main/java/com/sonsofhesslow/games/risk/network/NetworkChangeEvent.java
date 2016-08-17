@@ -7,12 +7,14 @@ public class NetworkChangeEvent {
         this.armies = message.armies;
         this.regionId = message.regionId;
         this.participantId = message.participantId;
+        this.chatMessage = message.chatMessage;
     }
 
     public NetworkAction action;
     private int armies;
     private int regionId;
     private int participantId;
+    private String chatMessage;
     public int getArmies()
     {
         if(action == NetworkAction.armyAmountChange)
@@ -46,4 +48,11 @@ public class NetworkChangeEvent {
         }
     }
 
+    public String getChatMessage() {
+        if(action == NetworkAction.chatChange) {
+            return chatMessage;
+        } else {
+            throw new RuntimeException("No message was sent");
+        }
+    }
 }

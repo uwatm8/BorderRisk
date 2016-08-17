@@ -11,6 +11,7 @@ import com.google.android.gms.games.multiplayer.Invitation;
 import com.google.android.gms.games.multiplayer.Multiplayer;
 import com.google.android.gms.games.multiplayer.Participant;
 import com.google.android.gms.games.multiplayer.realtime.RoomConfig;
+import com.sonsofhesslow.games.risk.ChatController;
 import com.sonsofhesslow.games.risk.model.Player;
 import com.sonsofhesslow.games.risk.model.Risk;
 import com.sonsofhesslow.games.risk.model.Territory;
@@ -93,6 +94,17 @@ public class RiskNetworkManager implements Observer {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+                }
+            }
+        } else if (obs instanceof ChatController) {
+            String event = (String) arg;
+            if(!selfModified) {
+                RiskNetworkMessage message = RiskNetworkMessage.chatMessageBuilder(event);
+
+                try {
+                    riskNetwork.broadcast(message.serialize());
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
         }

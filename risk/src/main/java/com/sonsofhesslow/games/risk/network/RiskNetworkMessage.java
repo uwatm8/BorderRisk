@@ -17,6 +17,7 @@ public class RiskNetworkMessage implements Serializable {
     public int armies;
     public int participantId;
     public int regionId;
+    public String chatMessage;
 
     static RiskNetworkMessage deSerialize(byte[] arr) throws IOException, ClassNotFoundException {
         ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(arr));
@@ -31,23 +32,28 @@ public class RiskNetworkMessage implements Serializable {
         return bos.toByteArray();
     }
 
-    public RiskNetworkMessage(NetworkAction action, int armies, int participantId, int regionId) {
+    public RiskNetworkMessage(NetworkAction action, int armies, int participantId, int regionId, String chatMessage) {
         this.action = action;
         this.armies = armies;
         this.participantId = participantId;
         this.regionId = regionId;
+        this.chatMessage = chatMessage;
     }
 
     public static RiskNetworkMessage territoryChangedMessageBuilder(Territory territory, int newTroops) {
-        return new RiskNetworkMessage(NetworkAction.armyAmountChange, newTroops, -1, territory.getId());
+        return new RiskNetworkMessage(NetworkAction.armyAmountChange, newTroops, -1, territory.getId(), null);
     }
 
     public static RiskNetworkMessage occupierChangedMessageBuilder(Territory territory, Player newOccupier) {
-        return new RiskNetworkMessage(NetworkAction.occupierChange, -1, newOccupier.getParticipantId(), territory.getId());
+        return new RiskNetworkMessage(NetworkAction.occupierChange, -1, newOccupier.getParticipantId(), territory.getId(), null);
     }
 
     public static RiskNetworkMessage turnChangedMessageBuilder(Player currentPlayerDone) {
-        return new RiskNetworkMessage(NetworkAction.turnChange, -1, currentPlayerDone.getParticipantId(), -1);
+        return new RiskNetworkMessage(NetworkAction.turnChange, -1, currentPlayerDone.getParticipantId(), -1, null);
+    }
+
+    public static RiskNetworkMessage chatMessageBuilder(String message) {
+        return new RiskNetworkMessage(NetworkAction.chatChange, -1, -1 ,1, message);
     }
 }
 

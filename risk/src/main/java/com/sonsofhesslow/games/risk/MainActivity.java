@@ -432,8 +432,17 @@ public class MainActivity extends AppCompatActivity
     private void initOnlineGame(int[] ids) {
         System.out.println("init online game");
 
+        int selfId = riskNetworkManager.getRiskNetwork().getmMyId().hashCode();
+        String selfName = "";
+        try {
+            selfName = Controller.getPlayerBydId(selfId).getName();
+        } catch (NullPointerException e) {
+            System.out.println("getPlayerById(selfId) failed, no player found");
+            e.printStackTrace();
+        }
+
         this.controller = new Controller(ids, overlayController, getResources());
-        controller.setSelfId(riskNetworkManager.getRiskNetwork().getmMyId().hashCode());
+        controller.setSelfId(selfId);
         //add to observables
         Risk riskModel = controller.getRiskModel();
         riskModel.addObserver(riskNetworkManager);
@@ -443,8 +452,9 @@ public class MainActivity extends AppCompatActivity
         }
 
         riskNetworkManager.getRiskNetwork().addListener(controller);
-
-        chatController = new ChatController(context, overlayController.parent, riskModel);
+        chatController = new ChatController(context, overlayController.parent, riskModel, selfName);
+        chatController.addObserver(riskNetworkManager);
+        riskNetworkManager.getRiskNetwork().addListener(chatController);
     }
 
     private void initOfflineGame(int[] ids) {

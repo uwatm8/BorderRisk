@@ -419,6 +419,16 @@ public class Controller implements GLTouchListener, NetworkListener {
         return null;
     }
 
+    @Nullable
+    public static Player getPlayerBydId(int id) {
+        for(Player player : riskModel.getPlayers()) {
+            if (player.getParticipantId() == id) {
+                return player;
+            }
+        }
+        return null;
+    }
+
     private void setStartingArmies() {
         //rules from hasbro
         if (isOnline()) {

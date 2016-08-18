@@ -444,6 +444,7 @@ public class MainActivity extends AppCompatActivity
             territory.addObserver(riskNetworkManager);
         }
 
+        //temporary
         String selfName = "";
         try {
             selfName = Controller.getPlayerBydId(selfId).getName();
@@ -453,7 +454,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         riskNetworkManager.getRiskNetwork().addListener(controller);
-        chatController = new ChatController(context, overlayController.parent, riskModel, selfName);
+        chatController = new ChatController(context, overlayController.parent, riskModel, Controller.getPlayerBydId(selfId));
         chatController.addObserver(riskNetworkManager);
         riskNetworkManager.getRiskNetwork().addListener(chatController);
     }

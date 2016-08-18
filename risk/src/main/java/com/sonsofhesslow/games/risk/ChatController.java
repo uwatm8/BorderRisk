@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.sonsofhesslow.games.risk.model.Player;
 import com.sonsofhesslow.games.risk.model.Risk;
 import com.sonsofhesslow.games.risk.network.NetworkAction;
 import com.sonsofhesslow.games.risk.network.NetworkChangeEvent;
@@ -27,7 +28,7 @@ public class ChatController extends Observable implements NetworkListener {
     String message;
 
     //online
-    String selfName;
+    Player self;
     boolean online = false;
 
     ChatController(Context context, ViewGroup parent, Risk risk) {
@@ -36,11 +37,11 @@ public class ChatController extends Observable implements NetworkListener {
         this.risk = risk;
     }
 
-    ChatController(Context context, ViewGroup parent, Risk risk, String selfName) {
+    ChatController(Context context, ViewGroup parent, Risk risk, Player self) {
         chatAdapter = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, chatMessages);
         this.parent = parent;
         this.risk = risk;
-        this.selfName = selfName;
+        this.self = self;
         online = true;
     }
 
@@ -54,7 +55,7 @@ public class ChatController extends Observable implements NetworkListener {
     public void sendMessage() {
         String name;
         if(online) {
-            name = selfName;
+            name = self.getName();
         } else {
             name = risk.getCurrentPlayer().getName();
         }

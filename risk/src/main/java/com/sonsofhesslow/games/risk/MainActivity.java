@@ -433,13 +433,6 @@ public class MainActivity extends AppCompatActivity
         System.out.println("init online game");
 
         int selfId = riskNetworkManager.getRiskNetwork().getmMyId().hashCode();
-        String selfName = "";
-        try {
-            selfName = Controller.getPlayerBydId(selfId).getName();
-        } catch (NullPointerException e) {
-            System.out.println("getPlayerById(selfId) failed, no player found");
-            e.printStackTrace();
-        }
 
         this.controller = new Controller(ids, overlayController, getResources());
         controller.setSelfId(selfId);
@@ -449,6 +442,14 @@ public class MainActivity extends AppCompatActivity
 
         for (Territory territory : riskModel.getTerritories()) {
             territory.addObserver(riskNetworkManager);
+        }
+
+        String selfName = "";
+        try {
+            selfName = Controller.getPlayerBydId(selfId).getName();
+        } catch (NullPointerException e) {
+            System.out.println("getPlayerById(selfId) failed, no player found");
+            e.printStackTrace();
         }
 
         riskNetworkManager.getRiskNetwork().addListener(controller);

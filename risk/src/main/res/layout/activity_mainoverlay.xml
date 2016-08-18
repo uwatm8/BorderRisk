@@ -96,23 +96,53 @@
             android:layout_height="300dp"
             android:id="@+id/listFrame">
 
-            <ListView
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/chatView"
-                android:stackFromBottom="false"
-                android:smoothScrollbar="false"
-                android:scrollingCache="false"
-                android:footerDividersEnabled="false"
-                android:focusableInTouchMode="false"
-                android:focusable="false"
-                android:background="#929292"
-                android:visibility="gone"
-                android:layout_marginBottom="50dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/chatFrame"
+                android:visibility="gone">
+
+                <ListView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="50dp"
+                    android:id="@+id/chatView"
+
+                    android:smoothScrollbar="false"
+                    android:scrollingCache="false"
+                    android:footerDividersEnabled="false"
+                    android:focusableInTouchMode="false"
+                    android:focusable="false"
+                    android:background="#929292"
+                    android:visibility="visible"
+
+                    android:stackFromBottom="true"
+                    android:transcriptMode="alwaysScroll"/>
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_marginEnd="100dp"
+                    android:layout_marginRight="100dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="true"
+                    android:id="@+id/chatText"/>
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/sendButton"
+                    android:text="Send"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:onClick="sendButtonPressed"/>
+
+            </RelativeLayout>
 
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
+                android:id="@+id/textView"
                 android:layout_marginBottom="0dp"
                 android:visibility="gone"
                 android:hint="@string/chatHint" />
